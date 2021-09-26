@@ -1,0 +1,7 @@
+*.vscode
+*.user
+*.txt
+
+build/
+
+!CMakeLists.txt
