@@ -4,7 +4,7 @@
 int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
-    TrainImage img;
-    img.show();
+    TrainImage imgT;
+    imgT.show();
     return a.exec();
 }

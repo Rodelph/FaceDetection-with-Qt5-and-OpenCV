@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QErrorMessage>
 
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>

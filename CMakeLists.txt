@@ -17,8 +17,10 @@ set(CMAKE_AUTORCC ON)
 
 include(CTest)
 
-add_subdirectory(ImgProc)
 add_subdirectory(TrainImage)
+
+add_subdirectory(ImgProc)
+
 add_subdirectory(mainProjEx)
 
 enable_testing()
