@@ -57,10 +57,9 @@ void ImgProc::on_startBtn_clicked()
 {
     name = ui->editName->text().toStdString();
     if(name == "") 
-        error->showMessage("Please selct a name for the person !");
+        error->showMessage("Please select a name !");
     else if(name != "")
     {
-    
     setUpCam();
     cap.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
     cap.set(cv::CAP_PROP_FRAME_HEIGHT,720); 

@@ -43,14 +43,15 @@ class ImgProc : public QMainWindow
         std::vector<cv::Rect> faces;
         const cv::String backToOrigin = "../../";
         std::string name;
+        
         const QString pathToFiles = QDir::currentPath() + "/res/";
-
         QString _howItWorks = tr(
             "This part will give you the ability to store you images, <br>"
             "in a folder. Please stay close to your camera when taking <br>"
             "images of the desired person."
         );
         QString path;
+
         QErrorMessage *error = new QErrorMessage(this);
 };
 
