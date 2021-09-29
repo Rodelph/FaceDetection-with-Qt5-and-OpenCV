@@ -17,9 +17,19 @@ set(CMAKE_AUTORCC ON)
 
 include(CTest)
 
+message("\nConfiguring TrainImage folder\n")
+
 add_subdirectory(TrainImage)
 
+message("\nConfiguring ImgProc folder\n")
+
 add_subdirectory(ImgProc)
+
+message("\nConfiguring Detect folder\n")
+
+add_subdirectory(Detect)
+
+message("\nConfiguring mainProjEx folder\n")
 
 add_subdirectory(mainProjEx)
 

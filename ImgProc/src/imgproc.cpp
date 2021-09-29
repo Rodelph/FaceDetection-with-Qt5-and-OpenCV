@@ -61,8 +61,8 @@ void ImgProc::on_startBtn_clicked()
     else if(name != "")
     {
     setUpCam();
-    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
-    cap.set(cv::CAP_PROP_FRAME_HEIGHT,720); 
+    cap.set(cv::CAP_PROP_FRAME_WIDTH  ,1280);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT ,720); 
 
     for (;;)
         {

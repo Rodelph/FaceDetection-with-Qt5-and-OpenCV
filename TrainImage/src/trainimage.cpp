@@ -16,3 +16,11 @@ void TrainImage::on_openCam_clicked()
     img = new ImgProc();
     img->show();
 }
+
+void TrainImage::on_detBtn_clicked()
+{
+    this->hide();
+
+    det = new detect();
+    det->show();
+}
