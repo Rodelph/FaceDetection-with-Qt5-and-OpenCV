@@ -22,7 +22,7 @@ void ImgProc::setUpCam()
 {
     cap.open(deviceID, apiID);
    
-    if (!cap.isOpened()) std::cerr << "Error ! Unable to open camera \n";
+    if (!cap.isOpened()) std::cerr << "Error:: Unable to activate camera \n";
 
     std::cout << "Start grabbing" << "\n";
 }
