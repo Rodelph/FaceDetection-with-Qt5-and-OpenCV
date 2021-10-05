@@ -15,8 +15,6 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-include(CTest)
-
 message("\nConfiguring TrainImage folder\n")
 
 add_subdirectory(TrainImage)
@@ -32,5 +30,3 @@ add_subdirectory(Detect)
 message("\nConfiguring mainProjEx folder\n")
 
 add_subdirectory(mainProjEx)
-
-enable_testing()

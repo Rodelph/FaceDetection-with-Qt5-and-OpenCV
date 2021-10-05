@@ -5,6 +5,7 @@ detect::detect(QWidget *parent) : QMainWindow(parent),
                                   ui(new Ui::detect)
 {
     ui->setupUi(this);
+
     deviceID = 0;
     apiID = cv::CAP_ANY;
     count = 0;
@@ -23,7 +24,8 @@ void detect::setupCam()
 
     if (!capt.isOpened()) std::cerr << "Error:: Unable to activate the camera !\n";
 
-    std::cout << "Start grabbing\n";
+    std::cout << "/******************************************************* INFO *******************************************************\\";
+    std::cout << "                                                    Start grabbing" << "\n";
 }
 
 cv::Mat detect::deployCam(cv::Mat& _frame)
@@ -33,11 +35,16 @@ cv::Mat detect::deployCam(cv::Mat& _frame)
     return _frame;
 }
 
+cv::Mat detect::lbpFace(cv::Mat _frame)
+{
+    
+}
+
 void detect::on_pushButton_clicked()
 {
     setupCam();
-    capt.set(cv::CAP_PROP_FRAME_HEIGHT,  720);
     capt.set(cv::CAP_PROP_FRAME_WIDTH , 1280);
+    capt.set(cv::CAP_PROP_FRAME_HEIGHT,  720);
 
     for (;;)
     {
@@ -55,8 +62,16 @@ void detect::on_pushButton_clicked()
         {
             capt.release();
             cv::destroyAllWindows();
-            std::cout << "Finished grabbing\n";
+            std::cout << "                                            Finished grabbing" << "\n";
+            std::cout << "/********************************************************************************************************************\\";
             break;
         }
     }
+}
+void detect::on_retBtn_clicked()
+{
+    this->hide();
+
+    img = new TrainImage();
+    img->show();
 }

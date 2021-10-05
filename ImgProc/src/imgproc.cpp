@@ -81,7 +81,8 @@ void ImgProc::on_startBtn_clicked()
             {   
                 cap.release();
                 cv::destroyAllWindows();
-                std::cout << "Finished grabbing\n";
+                std::cout << "                                            Finished grabbing" << "\n";
+                std::cout << "/********************************************************************************************************************\\";
                 break;
             }
         }

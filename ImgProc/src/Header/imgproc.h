@@ -37,20 +37,19 @@ class ImgProc : public QMainWindow
         cv::CascadeClassifier face_cascade;
         cv::VideoCapture cap;
 
-        uint8_t deviceID, apiID;
-        uint8_t count;
+        uint8_t deviceID, apiID, count;
         
         std::vector<cv::Rect> faces;
-        const cv::String backToOrigin = "../../../../";
+        const cv::String backToOrigin = "../../";
         std::string name;
         
         const QString pathToFiles = QDir::currentPath() + "/res/";
+        QString path;
         QString _howItWorks = tr(
             "This part will give you the ability to store you images, <br>"
             "in a folder. Please stay close to your camera when taking <br>"
             "images of the desired person."
         );
-        QString path;
 
         QErrorMessage *error;
 };

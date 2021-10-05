@@ -10,6 +10,9 @@
 #include <opencv2/videoio.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/objdetect.hpp>
+#include <opencv2/face/facerec.hpp>
+
+#include <boost/algorithm/string/predicate.hpp>
 
 #include <iostream>
 #include <filesystem>
