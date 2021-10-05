@@ -52,7 +52,7 @@ class ImgProc : public QMainWindow
         );
         QString path;
 
-        QErrorMessage *error = new QErrorMessage(this);
+        QErrorMessage *error;
 };
 
 #endif // IMGPROC_H

@@ -9,6 +9,7 @@ ImgProc::ImgProc(QWidget *parent) : QMainWindow(parent),
     deviceID = 0;
     apiID = cv::CAP_ANY;
     count = 0;
+    error = new QErrorMessage(this);
 }
 
 ImgProc::~ImgProc() 
@@ -22,9 +23,9 @@ void ImgProc::setUpCam()
 {
     cap.open(deviceID, apiID);
    
-    if (!cap.isOpened()) std::cerr << "Error ! Unable to open camera \n";
-
-    std::cout << "Start grabbing" << "\n";
+    if (!cap.isOpened()) error->showMessage("Error ! Unable to open camera because it is being used in another program !\n");
+    std::cout << "/******************************************************* INFO *******************************************************\\";
+    std::cout << "                                                    Start grabbing" << "\n";
 }
 
 cv::Mat ImgProc::deployCam(cv::Mat& _frame)
