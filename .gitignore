@@ -2,6 +2,8 @@
 *.user
 *.txt
 
+*.vs
+*.json
 build/
 
 !CMakeLists.txt
