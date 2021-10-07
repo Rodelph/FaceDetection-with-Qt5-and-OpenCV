@@ -1,5 +1,8 @@
 #include "./Header/imgproc.h"
 #include "ui_imgproc.h"
+#include <opencv2/core/hal/interface.h>
+#include <opencv2/imgproc.hpp>
+#include <opencv4/opencv2/imgproc.hpp>
 
 ImgProc::ImgProc(QWidget *parent) : QMainWindow(parent),
                                     ui(new Ui::ImgProc)
@@ -46,11 +49,14 @@ cv::Mat ImgProc::detectFace(cv::Mat& _frameDet, std::string& _namePerson)
     for (int i = 0; i < faces.size(); i++)
     {
         std::filesystem::create_directories("res/" + _namePerson);
+        cv::cvtColor(_frameDet, _frameDet, cv::COLOR_BGR2GRAY);
         cv::imwrite("res/" + _namePerson + "/" + std::to_string(count) + ".png", _frameDet);
+        cv::cvtColor(_frameDet, _frameDet, cv::COLOR_GRAY2BGR);
         cv::Point center(faces[i].x + faces[i].width * 0.5, faces[i].y + faces[i].height * 0.5);
         ellipse(_frameDet, center, cv::Size(faces[i].width * 0.5, faces[i].height * 0.5), 0, 0, 360, cv::Scalar(0, 255, 0), 1, 8, 0);
         count++;
     }
+ 
     return _frameDet;
 }
 
@@ -74,8 +80,8 @@ void ImgProc::on_startBtn_clicked()
                 std::cerr << "ERROR! blank frame grabbed\n";
                 break;
             }
-            
-            cv::imshow("Capturing images", frame);
+
+            cv::imshow("Video capturing", frame);
 
             if (cv::waitKey(5) >= 27) 
             {   

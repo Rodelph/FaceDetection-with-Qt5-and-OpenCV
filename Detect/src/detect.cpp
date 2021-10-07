@@ -1,5 +1,7 @@
 #include "./Header/detect.h"
 #include "ui_detect.h"
+#include <cfloat>
+#include <opencv2/face/facerec.hpp>
 
 detect::detect(QWidget *parent) : QMainWindow(parent),
                                   ui(new Ui::detect)
@@ -37,7 +39,8 @@ cv::Mat detect::deployCam(cv::Mat& _frame)
 
 cv::Mat detect::lbpFace(cv::Mat _frame)
 {
-    
+   // cv::face::LBPHFaceRecognizer::create(1, 8, 8, DBL_MAX);
+     return _frame;   
 }
 
 void detect::on_pushButton_clicked()

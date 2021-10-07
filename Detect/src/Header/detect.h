@@ -17,7 +17,7 @@ class detect : public QMainWindow
         explicit detect(QWidget *parent = nullptr);
         ~detect();
 
-private slots:
+    private slots:
         void on_pushButton_clicked();
         void on_retBtn_clicked();
         cv::Mat lbpFace(cv::Mat _frame);
