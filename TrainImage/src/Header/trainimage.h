@@ -1,15 +1,9 @@
-#ifndef TRAINIMAGE_H
-#define TRAINIMAGE_H
+#ifndef __TRAINIMAGE_H
+#define __TRAINIMAGE_H
 
 #include "../../../Precompiled_H/precom_Header.h"
-#include "../../../ImgProc/src/Header/imgproc.h"
-#include "../../../Detect//src/Header/detect.h"
 
 namespace Ui { class TrainImage; }
-
-class ImgProc;
-
-class detect;
 
 class TrainImage : public QMainWindow
 {
@@ -23,10 +17,8 @@ class TrainImage : public QMainWindow
         void on_openCam_clicked();
         void on_detBtn_clicked();
 
-private:
+    private:
         Ui::TrainImage *ui;
-        ImgProc *img;
-        detect *det;
 };
 
-#endif // TRAINIMAGE_H
+#endif // __TRAINIMAGE_H

@@ -1,8 +1,6 @@
+#include "../../TrainImage/src/Header/trainimage.h"
 #include "./Header/imgproc.h"
 #include "ui_imgproc.h"
-#include <opencv2/core/hal/interface.h>
-#include <opencv2/imgproc.hpp>
-#include <opencv4/opencv2/imgproc.hpp>
 
 ImgProc::ImgProc(QWidget *parent) : QMainWindow(parent),
                                     ui(new Ui::ImgProc)
@@ -99,7 +97,7 @@ void ImgProc::on_retBtn_clicked()
 {
     this->hide();
 
-    train = new TrainImage();
+    TrainImage *train = new TrainImage();
     train->show();
 }
 

@@ -1,3 +1,5 @@
+#include "../../ImgProc/src/Header/imgproc.h"
+#include "../../Detect/src/Header/detect.h"
 #include "./Header/trainimage.h"
 #include "ui_trainimage.h"
 
@@ -13,7 +15,7 @@ void TrainImage::on_openCam_clicked()
 {
     this->hide();
 
-    img = new ImgProc();
+    ImgProc *img = new ImgProc();
     img->show();
 }
 
@@ -21,6 +23,6 @@ void TrainImage::on_detBtn_clicked()
 {
     this->hide();
 
-    det = new detect();
+    detect *det = new detect();
     det->show();
 }

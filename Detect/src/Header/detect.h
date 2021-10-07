@@ -1,13 +1,9 @@
-#ifndef DETECT_H
-#define DETECT_H
+#ifndef __DETECT_H
+#define __DETECT_H
 
 #include "../../Precompiled_H/precom_Header.h"
-#include "../../../TrainImage/src/Header/trainimage.h"
-#include <QMainWindow>
 
 namespace Ui { class detect; }
-
-class TrainImage;
 
 class detect : public QMainWindow
 {
@@ -27,8 +23,7 @@ class detect : public QMainWindow
         cv::Mat deployCam(cv::Mat& _frame);
 
         Ui::detect *ui;
-        TrainImage *img;
-        
+       
         cv::VideoCapture capt;
         cv::Mat frame;
 
@@ -36,4 +31,4 @@ class detect : public QMainWindow
         const QString pathToFiles = QDir::currentPath() + "/res/";
 };
 
-#endif // DETECT_H
+#endif // __DETECT_H

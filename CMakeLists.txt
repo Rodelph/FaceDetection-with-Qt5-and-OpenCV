@@ -27,6 +27,10 @@ message("\nConfiguring Detect folder\n")
 
 add_subdirectory(Detect)
 
+message("\nConfiguring precompiled headers\n")
+
+add_subdirectory(Precompiled_H)
+
 message("\nConfiguring mainProjEx folder\n")
 
 add_subdirectory(mainProjEx)

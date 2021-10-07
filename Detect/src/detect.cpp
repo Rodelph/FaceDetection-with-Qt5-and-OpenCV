@@ -1,7 +1,6 @@
+#include "../../TrainImage/src/Header/trainimage.h"
 #include "./Header/detect.h"
 #include "ui_detect.h"
-#include <cfloat>
-#include <opencv2/face/facerec.hpp>
 
 detect::detect(QWidget *parent) : QMainWindow(parent),
                                   ui(new Ui::detect)
@@ -75,6 +74,6 @@ void detect::on_retBtn_clicked()
 {
     this->hide();
 
-    img = new TrainImage();
+    TrainImage *img = new TrainImage();
     img->show();
 }

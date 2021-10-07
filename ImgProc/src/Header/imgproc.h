@@ -1,12 +1,9 @@
-#ifndef IMGPROC_H
-#define IMGPROC_H
+#ifndef __IMGPROC_H
+#define __IMGPROC_H
 
 #include "../../../Precompiled_H/precom_Header.h"
-#include "../../../TrainImage/src/Header/trainimage.h"
 
 namespace Ui { class ImgProc; }
-
-class TrainImage;
 
 class ImgProc : public QMainWindow
 {
@@ -31,7 +28,6 @@ class ImgProc : public QMainWindow
         cv::Mat detectFace(cv::Mat& _frameDet, std::string& _namePerson);
 
         Ui::ImgProc *ui;
-        TrainImage *train;
 
         cv::Mat frame;
         cv::CascadeClassifier face_cascade;
@@ -54,4 +50,4 @@ class ImgProc : public QMainWindow
         QErrorMessage *error;
 };
 
-#endif // IMGPROC_H
+#endif //__IMGPROC_H
