@@ -16,7 +16,7 @@ class detect : public QMainWindow
     private slots:
         void on_pushButton_clicked();
         void on_retBtn_clicked();
-        cv::Mat lbpFace(cv::Mat _frame);
+        cv::Mat lbpFace(cv::Mat &_frame);
 
     private:
         void setupCam();

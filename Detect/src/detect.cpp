@@ -36,10 +36,12 @@ cv::Mat detect::deployCam(cv::Mat& _frame)
     return _frame;
 }
 
-cv::Mat detect::lbpFace(cv::Mat _frame)
+cv::Mat detect::lbpFace(cv::Mat &_frame)
 {
-   // cv::face::LBPHFaceRecognizer::create(1, 8, 8, DBL_MAX);
-     return _frame;   
+    //std::vector<int> labels(_frame.size());
+
+    //cv::face::LBPHFaceRecognizer::create(1, 8, 8, DBL_MAX);
+    return _frame;   
 }
 
 void detect::on_pushButton_clicked()
