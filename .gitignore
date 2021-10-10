@@ -1,7 +1,7 @@
 *.vscode
 *.user
 *.txt
-*.cache
+.cache/
 *.vs
 *.json
 build/
