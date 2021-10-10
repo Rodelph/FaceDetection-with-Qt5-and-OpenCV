@@ -1,5 +1,5 @@
 <p align = "center">
-       #FaceDetection-with-Qt5-and-OpenCV
+       FaceDetection-with-Qt5-and-OpenCV
 </p>
 
 <p align = "center">🔴 IMPORTANT 🔴 </p>
