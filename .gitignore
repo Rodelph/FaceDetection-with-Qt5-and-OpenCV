@@ -1,7 +1,6 @@
 *.vscode
 *.user
 *.txt
-.cache/clangd/
 *.vs
 *.json
 build/
