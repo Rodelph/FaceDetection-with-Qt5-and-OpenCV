@@ -23,10 +23,6 @@ message("\nConfiguring ImgProc folder\n")
 
 add_subdirectory(ImgProc)
 
-message("\nConfiguring precompiled headers\n")
-
-add_subdirectory(Precompiled_H)
-
 message("\nConfiguring mainProjEx folder\n")
 
 add_subdirectory(mainProjEx)

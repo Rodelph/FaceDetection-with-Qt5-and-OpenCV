@@ -35,7 +35,7 @@ class ImgProc : public QMainWindow
         uint8_t deviceID, apiID, count;
         
         std::vector<cv::Rect> faces;
-        const cv::String backToOrigin = "../../";
+        const cv::String backToOrigin = "../../../../";
         std::string name;
         
         const QString pathToFiles = QDir::currentPath() + "/res/";
