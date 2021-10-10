@@ -97,26 +97,14 @@
     <property name="title">
      <string>Info</string>
     </property>
-    <addaction name="actionHow_it_works"/>
+    <addaction name="actionMore_info"/>
    </widget>
-   <widget class="QMenu" name="menuFiles">
-    <property name="title">
-     <string>Files</string>
-    </property>
-    <addaction name="actionCheck_stored_images"/>
-   </widget>
-   <addaction name="menuFiles"/>
    <addaction name="menuinfo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionHow_it_works">
+  <action name="actionMore_info">
    <property name="text">
-    <string>How it works</string>
-   </property>
-  </action>
-  <action name="actionCheck_stored_images">
-   <property name="text">
-    <string>Check stored images</string>
+    <string>More info</string>
    </property>
   </action>
  </widget>

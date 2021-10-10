@@ -5,6 +5,8 @@ add_library(
     src/imgproc.ui
 )
 
+target_precompile_headers(ImgProc PUBLIC "../Precompiled_H/precom_Header.h")
+
 target_include_directories(ImgProc PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 find_package(Qt5 COMPONENTS Widgets Core Gui REQUIRED)
@@ -15,17 +17,6 @@ if(${Qt5_FOUND})
     message("Linked Qt version : " ${Qt5_VERSION} " on this computer !")
 elseif(!${Qt5_FOUND})
     message("Coudn't find a Qt installation on this computer !")
-endif()
-
-find_package(Boost REQUIRED)
-
-if(${Boost_FOUND})
-    message("Found Boost version : " ${Boost_VERSION} " on this computer !")
-    include_directories( ${Boost_INCLUDE_DIR} )
-    target_link_libraries(ImgProc ${Boost_LIBRARIES} )
-    message("Linked Boost version : " ${Boost_VERSION} " on this computer !")
-elseif(!${Boost_FOUND})
-    message("Couldn't find a Boost installation on this computer !")
 endif()
 
 find_package(OpenCV REQUIRED)

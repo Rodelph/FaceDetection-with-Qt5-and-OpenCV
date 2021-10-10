@@ -12,8 +12,7 @@
 #include <opencv2/objdetect.hpp>
 #include <opencv2/face/facerec.hpp>
 #include <opencv2/core/hal/interface.h>
-
-#include <boost/algorithm/string/predicate.hpp>
+#include <opencv2/face.hpp>
 
 #include <cfloat>
 #include <iostream>

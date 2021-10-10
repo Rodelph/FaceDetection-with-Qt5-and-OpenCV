@@ -1,7 +1,7 @@
 #include "../../ImgProc/src/Header/imgproc.h"
-#include "../../Detect/src/Header/detect.h"
 #include "./Header/trainimage.h"
 #include "ui_trainimage.h"
+#include <qmessagebox.h>
 
 TrainImage::TrainImage(QWidget *parent) : QMainWindow(parent), 
                                           ui(new Ui::TrainImage)
@@ -19,10 +19,16 @@ void TrainImage::on_openCam_clicked()
     img->show();
 }
 
-void TrainImage::on_detBtn_clicked()
+void TrainImage::on_actionAbout_us_triggered()
 {
-    this->hide();
+    QMessageBox::information(this, 
+                             "About us",
+                             aboutUs);
+}
 
-    detect *det = new detect();
-    det->show();
+void TrainImage::on_actionVersion_triggered()
+{
+    QMessageBox::information(this, 
+                             "Version",
+                             version);
 }

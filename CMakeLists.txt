@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.16)
 
 project( VidOpenCV VERSION 0.1.0 LANGUAGES CXX )
 
@@ -22,10 +22,6 @@ add_subdirectory(TrainImage)
 message("\nConfiguring ImgProc folder\n")
 
 add_subdirectory(ImgProc)
-
-message("\nConfiguring Detect folder\n")
-
-add_subdirectory(Detect)
 
 message("\nConfiguring precompiled headers\n")
 

@@ -7,19 +7,18 @@ namespace Ui { class ImgProc; }
 
 class ImgProc : public QMainWindow
 {
-        Q_OBJECT
+    Q_OBJECT
 
     public:
-    
+        
         explicit ImgProc(QWidget *parent = nullptr);
         ~ImgProc();
 
     private slots:
 
-        void on_actionCheck_stored_images_triggered();
         void on_startBtn_clicked();
         void on_retBtn_clicked();
-        void on_actionHow_it_works_triggered();
+        void on_actionMore_info_triggered();
         
     private:
 

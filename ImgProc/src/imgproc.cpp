@@ -1,6 +1,7 @@
 #include "../../TrainImage/src/Header/trainimage.h"
 #include "./Header/imgproc.h"
 #include "ui_imgproc.h"
+#include <qmessagebox.h>
 
 ImgProc::ImgProc(QWidget *parent) : QMainWindow(parent),
                                     ui(new Ui::ImgProc)
@@ -43,13 +44,12 @@ cv::Mat ImgProc::detectFace(cv::Mat& _frameDet, std::string& _namePerson)
     if (face_cascade.empty()) std::cerr << "The cascade classifier is empty ! \n";
 
     face_cascade.detectMultiScale(_frameDet, faces, 1.1, 2, 0 | cv::CASCADE_SCALE_IMAGE, cv::Size(30, 30));
-
+    std::filesystem::create_directories("res/" + _namePerson);
+    std::cout << "Created a new file with the name :: " << _namePerson << "\n";
+ 
     for (int i = 0; i < faces.size(); i++)
     {
-        std::filesystem::create_directories("res/" + _namePerson);
-        cv::cvtColor(_frameDet, _frameDet, cv::COLOR_BGR2GRAY);
         cv::imwrite("res/" + _namePerson + "/" + std::to_string(count) + ".png", _frameDet);
-        cv::cvtColor(_frameDet, _frameDet, cv::COLOR_GRAY2BGR);
         cv::Point center(faces[i].x + faces[i].width * 0.5, faces[i].y + faces[i].height * 0.5);
         ellipse(_frameDet, center, cv::Size(faces[i].width * 0.5, faces[i].height * 0.5), 0, 0, 360, cv::Scalar(0, 255, 0), 1, 8, 0);
         count++;
@@ -101,19 +101,10 @@ void ImgProc::on_retBtn_clicked()
     train->show();
 }
 
-void ImgProc::on_actionHow_it_works_triggered()
+void ImgProc::on_actionMore_info_triggered()
 {
     QMessageBox::information(this,
                              "Info on how it works",
                              this->_howItWorks
                              );
-}
-
-void ImgProc::on_actionCheck_stored_images_triggered()
-{
-    path = QFileDialog::getOpenFileName(this, 
-                                       "Open stored images",
-                                        pathToFiles,
-                                        "Image (*.png)"
-                                        );   
 }
