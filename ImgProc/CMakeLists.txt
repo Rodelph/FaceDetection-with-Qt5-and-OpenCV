@@ -5,8 +5,6 @@ add_library(
     src/imgproc.ui
 )
 
-target_precompile_headers(ImgProc PUBLIC "../Precompiled_H/precom_Header.h")
-
 target_include_directories(ImgProc PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 find_package(Qt5 COMPONENTS Widgets Core Gui REQUIRED)

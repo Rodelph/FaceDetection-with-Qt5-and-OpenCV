@@ -4,8 +4,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 add_executable(VidOpenCV main.cpp)
 
+set(HEADER_FILES ../precompHeader/preH.h)
+target_precompile_headers(VidOpenCV PRIVATE ${HEADER_FILES})
+
 target_link_libraries(VidOpenCV PRIVATE TrainImage)
 target_link_libraries(VidOpenCV PRIVATE ImgProc)
-target_link_libraries(VidOpenCV PRIVATE Precompiled_H)
 
 message("All libraries have been linked !")

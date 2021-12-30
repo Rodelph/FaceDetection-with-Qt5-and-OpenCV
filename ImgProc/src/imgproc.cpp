@@ -1,7 +1,6 @@
 #include "../../TrainImage/src/Header/trainimage.h"
 #include "./Header/imgproc.h"
 #include "ui_imgproc.h"
-#include <qmessagebox.h>
 
 ImgProc::ImgProc(QWidget *parent) : QMainWindow(parent),
                                     ui(new Ui::ImgProc)
@@ -33,7 +32,6 @@ void ImgProc::setUpCam()
 cv::Mat ImgProc::deployCam(cv::Mat& _frame)
 {
     cap.read(_frame);
-
     return _frame;
 }
 

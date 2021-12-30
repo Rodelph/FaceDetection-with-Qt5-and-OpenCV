@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __preH__
+#define __preH__
 
 #include <QMainWindow>
 #include <QMessageBox>
@@ -19,3 +20,7 @@
 #include <filesystem>
 #include <string>
 #include <stdio.h>
+
+#include <qmessagebox.h>
+
+#endif // __preH__

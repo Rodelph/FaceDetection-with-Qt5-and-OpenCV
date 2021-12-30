@@ -3,6 +3,7 @@
 *.txt
 *.vs
 *.json
+*.cache/
 build/
 
 !CMakeLists.txt

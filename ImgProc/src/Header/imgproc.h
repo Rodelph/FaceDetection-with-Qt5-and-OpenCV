@@ -1,7 +1,7 @@
 #ifndef __IMGPROC_H
 #define __IMGPROC_H
 
-#include "../../../Precompiled_H/precom_Header.h"
+#include "../../../precompHeader/preH.h"
 
 namespace Ui { class ImgProc; }
 

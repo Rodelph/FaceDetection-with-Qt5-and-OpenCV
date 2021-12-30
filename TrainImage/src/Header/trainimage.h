@@ -1,8 +1,7 @@
 #ifndef __TRAINIMAGE_H
 #define __TRAINIMAGE_H
 
-#include "../../../Precompiled_H/precom_Header.h"
-#include <qmessagebox.h>
+#include "../../../precompHeader/preH.h"
 
 namespace Ui { class TrainImage; }
 

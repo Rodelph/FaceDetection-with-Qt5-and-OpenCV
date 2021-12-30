@@ -1,7 +1,6 @@
 #include "../../ImgProc/src/Header/imgproc.h"
 #include "./Header/trainimage.h"
 #include "ui_trainimage.h"
-#include <qmessagebox.h>
 
 TrainImage::TrainImage(QWidget *parent) : QMainWindow(parent), 
                                           ui(new Ui::TrainImage)
