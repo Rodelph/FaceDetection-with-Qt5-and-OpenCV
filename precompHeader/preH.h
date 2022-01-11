@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QErrorMessage>
+#include <QApplication>
 
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
@@ -14,7 +15,13 @@
 #include <opencv2/face/facerec.hpp>
 #include <opencv2/core/hal/interface.h>
 #include <opencv2/face.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/core/cuda.hpp>
+#include <opencv2/cudaarithm.hpp>
+#include <opencv2/videoio.hpp>
 
+#include <cmath>
+#include <stdio.h>
 #include <cfloat>
 #include <iostream>
 #include <filesystem>

@@ -2,6 +2,7 @@
 #define __IMGPROC_H
 
 #include "../../../precompHeader/preH.h"
+#include <cstdint>
 
 namespace Ui { class ImgProc; }
 
@@ -26,14 +27,16 @@ class ImgProc : public QMainWindow
         cv::Mat deployCam(cv::Mat& _frame);
         cv::Mat detectFace(cv::Mat& _frameDet, std::string& _namePerson);
 
-        Ui::ImgProc *ui;
+        Ui::ImgProc *ui;      
 
         cv::Mat frame;
         cv::CascadeClassifier face_cascade;
         cv::VideoCapture cap;
+        cv::cuda::GpuMat dstGpu, srciGpu;
 
-        uint8_t deviceID, apiID, count;
-        
+        uint8_t deviceID;
+        uint32_t count;
+        uint16_t apiID; 
         std::vector<cv::Rect> faces;
         const cv::String backToOrigin = "../../";
         std::string name;
@@ -47,6 +50,10 @@ class ImgProc : public QMainWindow
         );
 
         QErrorMessage *error;
+
+    public :
+        uint32_t getCount();
+        uint16_t getapiID();
 };
 
 #endif //__IMGPROC_H

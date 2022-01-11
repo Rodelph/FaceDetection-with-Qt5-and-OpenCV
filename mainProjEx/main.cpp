@@ -1,5 +1,4 @@
 #include "../TrainImage/src/Header/trainimage.h"
-#include <QApplication>
 
 int main(int argc, char** argv)
 {

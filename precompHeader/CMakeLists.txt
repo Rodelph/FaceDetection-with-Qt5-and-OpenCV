@@ -1,6 +1,7 @@
 add_library(
     PrecompHeader
     preH.h
+    preH.h.gch
 )
 
 target_include_directories(PrecompHeader PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
