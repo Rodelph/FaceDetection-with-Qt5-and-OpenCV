@@ -1,4 +1,4 @@
-#include "../../TrainImage/src/Header/trainimage.h"
+#include "../../InfoOnApp/src/Header/infoapp.h"
 #include "./Header/imgproc.h"
 #include "ui_imgproc.h"
 
@@ -61,6 +61,16 @@ cv::Mat ImgProc::detectFace(cv::Mat& _frameDet, std::string& _namePerson)
     return _frameDet;
 }
 
+cv::Mat ImgProc::filterGpu(std::string& _namePerson, cv::Mat& _frameUp, cv::Mat& _frameDown)
+{
+    this->srcGpu.upload(_frameUp);
+    /*
+     *Detect face cascade
+     */
+    this->dstGpu.download(_frameDown);
+    return _frameDown;
+}
+
 void ImgProc::on_startBtn_clicked()
 {
     this->name = ui->editName->text().toStdString();
@@ -74,20 +84,20 @@ void ImgProc::on_startBtn_clicked()
         {
             deployCam(this->frame);
             detectFace(this->frame, this->name);
-
-            if (this->frame.empty()) {
-                std::cerr << "ERROR! Blank frame grabbed\n";
+            filterGpu(this->name, this->frame, this->frameGpu); 
+            if (this->frameGpu.empty()) {
+                std::cerr << "ERROR::Blank frame grabbed\n";
                 break;
             }
 
-            cv::imshow("Camera Capture", this->frame);
+            cv::imshow("Camera Capture", this->frameGpu);
 
             if (cv::waitKey(5) >= 27) 
             {   
                 this->cap.release();
                 cv::destroyAllWindows();
-                std::cout << "Finished grabbing !\n";
-                printf("%d images were saved !", this->count);
+                std::cout << "\nFinished grabbing !\n";
+                printf("\n%d images were saved !\n", this->count);
                 break;
             }
         }
@@ -98,8 +108,8 @@ void ImgProc::on_retBtn_clicked()
 {
     this->hide();
 
-    TrainImage *train = new TrainImage();
-    train->show();
+    InfoOnApp *info = new InfoOnApp();
+    info->show();
 }
 
 void ImgProc::on_actionMore_info_triggered()

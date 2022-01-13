@@ -3,15 +3,15 @@
 
 #include "../../../precompHeader/preH.h"
 
-namespace Ui { class TrainImage; }
+namespace Ui { class InfoOnApp; }
 
-class TrainImage : public QMainWindow
+class InfoOnApp : public QMainWindow
 {
     Q_OBJECT
 
     public:
-        explicit TrainImage(QWidget *parent = nullptr);
-        ~TrainImage();
+        explicit InfoOnApp(QWidget *parent = nullptr);
+        ~InfoOnApp();
 
     private slots :
         void on_openCam_clicked();
@@ -19,7 +19,7 @@ class TrainImage : public QMainWindow
         void on_actionAbout_us_triggered();
 
     private:
-        Ui::TrainImage *ui;
+        Ui::InfoOnApp *ui;
         QString aboutUs = tr("This program was made by NAQI Amine, it's a demo of a face detection program <br>"
                              "that uses HAARXML file, and OpenCV library to achieve the goal of this application.<br>"
                              "Enjoy !!");
