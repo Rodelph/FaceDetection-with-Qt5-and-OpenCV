@@ -1,9 +1,9 @@
-#include "../TrainImage/src/Header/trainimage.h"
+#include "../InfoOnApp/src/Header/infoapp.h"
 
 int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
-    TrainImage imgT;
-    imgT.show();
+    InfoOnApp info;
+    info.show();
     return a.exec();
 }

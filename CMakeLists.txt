@@ -19,9 +19,9 @@ message("\nConfiguring Precompiled header folder")
 
 add_subdirectory(precompHeader)
 
-message("\nConfiguring TrainImage folder\n")
+message("\nConfiguring InfoOnApp folder\n")
 
-add_subdirectory(TrainImage)
+add_subdirectory(InfoOnApp)
 
 message("\nConfiguring ImgProc folder\n")
 

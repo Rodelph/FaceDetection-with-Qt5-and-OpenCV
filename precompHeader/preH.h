@@ -19,6 +19,7 @@
 #include <opencv2/core/cuda.hpp>
 #include <opencv2/cudaarithm.hpp>
 #include <opencv2/videoio.hpp>
+#include <opencv2/cudaobjdetect.hpp>
 
 #include <cmath>
 #include <stdio.h>

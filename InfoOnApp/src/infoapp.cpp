@@ -1,16 +1,16 @@
 #include "../../ImgProc/src/Header/imgproc.h"
-#include "./Header/trainimage.h"
-#include "ui_trainimage.h"
+#include "./Header/infoapp.h"
+#include "ui_infoapp.h"
 
-TrainImage::TrainImage(QWidget *parent) : QMainWindow(parent), 
-                                          ui(new Ui::TrainImage)
+InfoOnApp::InfoOnApp(QWidget *parent) : QMainWindow(parent), 
+                                          ui(new Ui::InfoOnApp)
 {
     ui->setupUi(this);
 }
 
-TrainImage::~TrainImage() { delete ui; }
+InfoOnApp::~InfoOnApp() { delete ui; }
 
-void TrainImage::on_openCam_clicked()
+void InfoOnApp::on_openCam_clicked()
 {
     this->hide();
 
@@ -18,14 +18,14 @@ void TrainImage::on_openCam_clicked()
     img->show();
 }
 
-void TrainImage::on_actionAbout_us_triggered()
+void InfoOnApp::on_actionAbout_us_triggered()
 {
     QMessageBox::information(this, 
                              "About us",
                              aboutUs);
 }
 
-void TrainImage::on_actionVersion_triggered()
+void InfoOnApp::on_actionVersion_triggered()
 {
     QMessageBox::information(this, 
                              "Version",
