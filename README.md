@@ -15,8 +15,8 @@ The goal is to be able to detect a face and store the image every time a face is
        
 | Library | Version|
 |:---:| :---: |
-| Opencv | 4.5.2 |
-| Qt | 5.12
+| Opencv | 4 |
+| Qt | 5
 
 </div>
 
